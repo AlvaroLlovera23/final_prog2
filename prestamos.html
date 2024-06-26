@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="appPrestamos.js" defer></script>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>BIBLIOTECA ESCOLAR</h1>
+            <nav>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="prestamos.html">Prestamos</a></p>
+                <p><a href="alumnos.html">Alumnos</a></p>
+                <p><a href="libros.html">Libros</a></p>
+            </nav>
+        </header>
+        <main>
+            <h2>Menú Prestamos</h2>
+            <div class="form">
+                <div class="fechaE">
+                    <label for="fechaEntrega">Fecha de entrega:</label>
+                    <input id="fechaEntrega" type="date">
+                </div>
+                <div class="fechaD">
+                    <label for="fechaDevolucion">Fecha de devolucion:</label>
+                    <input id="fechaDevolucion" type="date">
+                </div>
+                <div class="idLibro">
+                    <label for="libroId">Libro:</label>
+                    <!-- <input id="libroId" type="number"> -->
+                    <select id="libroId"></select>
+                </div>
+                <div class="idAlumno">
+                    <label for="alumnoId">Alummo:</label>
+                    <!-- <input id="alumnoId" type="number">  -->
+                    <select id="alumnoId"></select>
+                </div>
+                <div class="botones">
+                    <button id="guardarP" onclick="guardarP()">Agregar</button>
+                    <button id="editarP" onclick="modificarP()" disabled>Actualizar</button>
+                    <button id="cancelarP" onclick="cancelarEditarP()" disabled hidden>Cancelar</button>
+                </div>
+                <h3 id="prestamos">Lista de Prestamos</h3>
+                <div id="listaP"></div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2022 - Molinero Tobias Leandro</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+crear una app web que administre el prestamo de libros de una biblioteca escolar
+usando 3 entidades (libro, alumno, prestamo)
+
+LIBRO
+id
+titulo
+autor
+
+ALUMNO
+id
+dni
+nombre
+direccion
+
+prestamo
+id
+fechaEntrega
+fechaDevolucion
+libroId
+alumnoId
+
+la adminstracion de los prestamos debe incluir como minimo las siguientes opciones:
+1) alta, baja(no debe dejar borra alumno con deuda) y modificacion de alumno
+2) alta, baja(no debe dejar borra libro si este fue prestado alguna vez no importando si se lo devolvio o no), modificacion de libro
+3) registro de prestamo de libro
+4) registro de devolucion de libro
+5) reporte de libros prestados
+6) reporte de libros no devueltos 
+

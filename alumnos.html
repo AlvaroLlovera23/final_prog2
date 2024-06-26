@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="alumnos.js" defer></script>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>BIBLIOTECA ESCOLAR</h1>
+            <nav>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="prestamos.html">Prestamos</a></p>
+                <p><a href="alumnos.html">Alumnos</a></p>
+                <p><a href="libros.html">Libros</a></p>
+            </nav>
+        </header>
+        <main>
+            <h2>Menu Alumnos</h2>
+            <div class="form">
+                <div class="dni">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni">
+                </div>
+                <div class="nombre">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre">
+                </div>
+                <div class="domicilio">
+                    <label for="domicilio">Domicilio:</label>
+                    <input type="text" id="domicilio">
+                </div>
+                <div class="botones">
+                    <button onclick="crearAlumno()" id="btnGuardarA">Agregar</button>
+                    <button onclick="editarAlumno()" id="btnEditarA" disabled="true">Actualizar</button>
+                    <button onclick="cancelarEditarA()" id="btnCancelarA" hidden="true">Cancelar</button>
+                </div>
+                <h3>Lista de Alumnos</h3>
+                <div id="listaAlumnos"></div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2022 - Molinero Tobias Leandro</p>
+        </footer>
+    </div>
+</body>
+</html>

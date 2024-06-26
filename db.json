@@ -1,0 +1,79 @@
+{
+  "libro": [
+    {
+      "titulo": "Algebra I",
+      "autor": "Aurelio Baldor",
+      "id": 1
+    },
+    {
+      "titulo": "Biologia",
+      "autor": "Editorial Kapelusz",
+      "id": 2
+    },
+    {
+      "titulo": "Historia Argentina",
+      "autor": "Teresa Eggers",
+      "id": 3
+    },
+    {
+      "titulo": "Fisica y Quimica",
+      "autor": "Editorial Santillana",
+      "id": 4
+    },
+    {
+      "titulo": "Diccionario Ingles",
+      "autor": "Cambridge University",
+      "id": 5
+    }
+  ],
+  "alumno": [
+    {
+      "dni": "41059937",
+      "nombre": "Molinero Tobias",
+      "domicilio": "Yerba Buena",
+      "id": 1
+    },
+    {
+      "dni": "41276216",
+      "nombre": "Majolli Facundo",
+      "domicilio": "SMDT",
+      "id": 2
+    },
+    {
+      "dni": "34286865",
+      "nombre": "Llovera Olmedo Alvaro",
+      "domicilio": "S. M. de Tucumán",
+      "id": 4
+    }
+  ],
+  "prestamo": [
+    {
+      "fechaEntrega": "2024-05-22",
+      "fechaDevolucion": "2024-06-05",
+      "libroId": "2",
+      "alumnoId": "1",
+      "id": 1
+    },
+    {
+      "fechaEntrega": "2024-06-05",
+      "fechaDevolucion": "2024-06-05",
+      "libroId": "3",
+      "alumnoId": "2",
+      "id": 2
+    },
+    {
+      "fechaEntrega": "2024-05-22",
+      "fechaDevolucion": "2024-06-05",
+      "libroId": "4",
+      "alumnoId": "3",
+      "id": 3
+    },
+    {
+      "fechaEntrega": "2024-05-30",
+      "fechaDevolucion": "2024-05-28",
+      "libroId": "5",
+      "alumnoId": "1",
+      "id": 4
+    }
+  ]
+}

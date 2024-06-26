@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="libros.js" defer></script>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>BIBLIOTECA ESCOLAR</h1>
+            <nav>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="prestamos.html">Prestamos</a></p>
+                <p><a href="alumnos.html">Alumnos</a></p>
+                <p><a href="libros.html">Libros</a></p>
+            </nav>
+        </header>
+        <main>
+            <h2>Menu Libros</h2>
+            <div class="form">
+                <div class="titulo">
+                    <label for="titulo">Titulo:</label>
+                    <input type="text" id="titulo">
+                </div>
+                <div class="autor">
+                    <label for="autor">Autor:</label>
+                    <input type="text" id="autor">
+                </div>
+                <div class="botones">
+                    <button onclick="guardarLibro()" id="btnGuardarL">Agregar</button>
+                    <button onclick="editarLibro()" id="btnEditarL" disabled="true">Actualizar</button>
+                    <button onclick="cancelarEditarL()" id="btnCancelarL" disabled="true" hidden="true">Cancelar</button>
+                </div>           
+                <h3>Lista de Libros</h3>
+                <div id="listaLibros"></div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2022 - Molinero Tobias Leandro</p>
+        </footer>
+    </div>
+</body>
+</html>
