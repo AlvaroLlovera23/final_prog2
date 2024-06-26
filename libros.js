@@ -1,2 +1,2 @@
-const txtLibro
+const txtLibro = document.getElementById
 const txtAutor
