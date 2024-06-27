@@ -2,9 +2,9 @@ const txtDNI = document.getElementById("dni")
 const txtNombre = document.getElementById("nombre")
 const txtDomicilio = document.getElementById("domicilio")
 
-const BotonGuardar = document.getElementById("btnGuardarA")
-const BotonEditar = document.getElementById("btnEditarA")
-const BotonCancelar = document.getElementById("btnCancelarA")
+const botonGuardar = document.getElementById("btnGuardarA")
+const botonEditar = document.getElementById("btnEditarA")
+const botonCancelar = document.getElementById("btnCancelarA")
 
 const listaAlumnos = document.getElementById("listaAlumnos")
 //Para todos los casos anteriores lo que estamos haciendo es asignar los elementos html, como los inputs, botones y el div donde se renderiza la lista de los alumnos registrados. Esto para más tarde poder manipularlos. Por ejemplo de los inputs podemos obtener el valor ingresado o asignarles un valor como en el caso de que seleccionamos un alumno para editar. Con los botones podemos habilitarlos o deshabilitarlos segun nos convenga.
