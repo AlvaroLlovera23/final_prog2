@@ -1,0 +1,34 @@
+INFO SOBRE HTTP y AXIOS
+
+¿Que es HTTP?
+Es un protocolo de transferencia de datos.
+Nos permite solicitar informacion al servidor(LEER EJEMPLO del archivo: ejemplo_http.txt)
+
+Al hacer una peticion http estamos enviando al servidor un REQUEST o solicitud/peticion en español. donde enviamos info de lo que necesitamos que haga el servidor. Luego recibimos un RESPONSE o respuesta. Que pueden ser datos solicitados o bien info sobre la peticion que hicimos.
+
+Los metodos mas comunes para una peticion http son:
+
+GET:
+- Descripción: Solicita un recurso específico del servidor.
+
+POST:
+- Descripción: Envía datos al servidor para crear o actualizar un recurso.
+
+PUT:
+- Descripción: Envía datos al servior para Actualizar/Editar/Modificar un recurso existente o crea uno nuevo si no existe.
+
+DELETE:
+- Descripción: Elimina un recurso específico del servidor.
+
+
+¿Que es axios?
+Axios es una libreria basada en PROMESAS que nos permite hacer estas peticiones HTTP de manera sencilla.
+
+IMPORTANTE: Podes leer sobre asincronia y promesas en javascript en: https://lenguajejs.com/javascript/asincronia/que-es/ 
+
+¿Que es una promesa en Javascript?
+Una promesa en Javascript es un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca.
+
+sintaxis de axios:
+axios.metodo(url, datos en caso de hacer post o put)
+
