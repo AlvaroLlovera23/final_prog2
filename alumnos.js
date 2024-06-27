@@ -18,9 +18,9 @@ function crearAlumno() {
         dni: txtDNI.value,
         nombre: txtNombre.value,
         domicilio: txtDomicilio.value
-    }).then(() => {
+    }).then(() => { //si la promesa se cumple, con then realizamos una acción
         listarAlumnos()
-    }).catch(()=>{
+    }).catch(()=>{ //capturamos el error si la promesa no se resuelve
         alert("ocurrió un error")
     })
 }
@@ -31,10 +31,10 @@ function listarAlumnos() {
       listaAlumnos.innerHTML= ""
       resp.data.forEach(elemento => {
         listaAlumnos.innerHTML += '<button onclick="borrarAlumno(' + elemento.id + ')">X</button>' + '<button onclick="seleccionarAlumno(' + elemento.id + ')">Editar</button>' + " - " + elemento.dni + " - " + elemento.nombre + " - " + elemento.domicilio + "<br>"});
-    }) //si la promesa se cumple, con then realizamos una acción
+    }) 
     .catch(() => {
 
-    })//capturamos el error si la promesa no se resuelve
+    })
 }
 listarAlumnos()
 
