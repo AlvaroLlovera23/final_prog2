@@ -45,9 +45,9 @@ function seleccionarAlumno(id) {
        txtDNI.value = resp.data.dni
        txtNombre.value = resp.data.nombre
        txtDomicilio.value = resp.data.domicilio
-       BotonEditar.disabled = false
-       BotonCancelar.hidden = false
-       BotonGuardar.disabled = true
+       botonEditar.disabled = false
+       botonCancelar.hidden = false
+       botonGuardar.disabled = true
     })
     .catch(() => {})
 }
