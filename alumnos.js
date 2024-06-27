@@ -30,7 +30,10 @@ function listarAlumnos() {
     .then((resp) => {
       listaAlumnos.innerHTML= ""
       resp.data.forEach(elemento => {
-        listaAlumnos.innerHTML += '<button onclick="borrarAlumno(' + elemento.id + ')">X</button>' + '<button onclick="seleccionarAlumno(' + elemento.id + ')">Editar</button>' + " - " + elemento.dni + " - " + elemento.nombre + " - " + elemento.domicilio + "<br>"});
+        listaAlumnos.innerHTML += 
+            `<button onclick = borrarAlumno(${elemento.id})>x</button> 
+            <button onclick = seleccionarAlumno(${elemento.id})>Editar</button>
+            - ${elemento.dni} - ${elemento.nombre} - ${elemento.domicilio}`});
     }) //si la promesa se cumple, con then realizamos una acción
     .catch(() => {
 
@@ -62,6 +65,15 @@ function editarAlumno() {
     }).catch(() => {
         alert("ocurrió un error")
     })
+}
+
+function cancelarEditarAlumno(){
+    botonCancelar.hidden= true
+    botonEditar.disabled= true
+    botonGuardar.disabled= false
+    txtDNI.value= ""
+    txtNombre.value= ""
+    txtDomicilio.value= ""
 }
 
 function borrarAlumno(id) {

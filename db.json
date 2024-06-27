@@ -2,7 +2,7 @@
   "libro": [
     {
       "titulo": "Algebra I",
-      "autor": "Aurelio Baldor",
+      "autor": "bhglkjh",
       "id": 1
     },
     {
@@ -11,19 +11,24 @@
       "id": 2
     },
     {
-      "titulo": "Historia Argentina",
-      "autor": "Teresa Eggers",
-      "id": 3
-    },
-    {
       "titulo": "Fisica y Quimica",
-      "autor": "Editorial Santillana",
+      "autor": "Editorial Medicina P",
       "id": 4
     },
     {
-      "titulo": "Diccionario Ingles",
-      "autor": "Cambridge University",
+      "titulo": "Narnia",
+      "autor": "C S Lewis",
       "id": 5
+    },
+    {
+      "titulo": "Matematica",
+      "autor": "Editorial Kapelusz",
+      "id": 6
+    },
+    {
+      "titulo": "ALIADOS",
+      "autor": "Leandro Calderone",
+      "id": 7
     }
   ],
   "alumno": [

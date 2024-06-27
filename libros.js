@@ -1,9 +1,9 @@
 const txtTitulo = document.getElementById("titulo")
 const txtAutor = document.getElementById("autor")
 
-const botonGuardar = document.getElementById("btnGuardar")
-const botonEditar = document.getElementById("btnEditar")
-const botonCancelar = document.getElementById("btnCancelar")
+const botonGuardar = document.getElementById("btnGuardarL")
+const botonEditar = document.getElementById("btnEditarL")
+const botonCancelar = document.getElementById("btnCancelarL")
 
 const listaLibros = document.getElementById("listaLibros")
 
@@ -11,10 +11,10 @@ const url= "http://localhost:3000/libro"
 
 var idAuxuliar
 
-function crearLibro() {
+function guardarLibro() {
     axios.post(url, {
-        dni: txtLibro.value,
-        nombre: txtAutor.value,
+        titulo: txtTitulo.value,
+        autor: txtAutor.value,
     }).then(() => {
         listarLibros()
         //AQUI VA A IR LA FUNCIÓN PARA LISTAR LOS LIBROS
@@ -42,9 +42,9 @@ function seleccionarLibro(id) {
        idAuxuliar = id
        txtTitulo.value = resp.data.titulo
        txtAutor.value = resp.data.autor
-       BotonEditar.disabled = false
-       BotonCancelar.hidden = false
-       BotonGuardar.disabled = true
+       botonEditar.disabled = false
+       botonCancelar.hidden = false
+       botonGuardar.disabled = true
     })
     .catch(() => {})
 }
@@ -60,12 +60,20 @@ function editarLibro() {
     })
 }
 
+function cancelarEditarLibro() {
+    botonCancelar.hidden = true
+    botonEditar.disabled = true
+    botonGuardar.disabled = false
+    txtTitulo.value = ""
+    txtAutor.value = ""
+}
+
 function borrarLibro(id) {
     let isConfirm = confirm("desea eliminar éste libro")
     if(isConfirm == true) {
         axios.delete(url + "/" + id)
         .then(() => {
-            listarAlumnos()
+            listarLibros()
         })
         .catch(() => {
             alert("ocurrió un error")
