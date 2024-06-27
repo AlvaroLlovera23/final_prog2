@@ -18,9 +18,9 @@ function crearAlumno() {
         dni: txtDNI.value,
         nombre: txtNombre.value,
         domicilio: txtDomicilio.value
-    }).then(() => {
+    }).then(() => { //si la promesa se cumple, con then realizamos una acción
         listarAlumnos()
-    }).catch(()=>{
+    }).catch(()=>{ //capturamos el error si la promesa no se resuelve
         alert("ocurrió un error")
     })
 }
@@ -37,7 +37,7 @@ function listarAlumnos() {
     }) //si la promesa se cumple, con then realizamos una acción
     .catch(() => {
 
-    })//capturamos el error si la promesa no se resuelve
+    })
 }
 listarAlumnos()
 
@@ -48,9 +48,9 @@ function seleccionarAlumno(id) {
        txtDNI.value = resp.data.dni
        txtNombre.value = resp.data.nombre
        txtDomicilio.value = resp.data.domicilio
-       BotonEditar.disabled = false
-       BotonCancelar.hidden = false
-       BotonGuardar.disabled = true
+       botonEditar.disabled = false
+       botonCancelar.hidden = false
+       botonGuardar.disabled = true
     })
     .catch(() => {})
 }
