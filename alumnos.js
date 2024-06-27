@@ -2,9 +2,9 @@ const txtDNI = document.getElementById("dni")
 const txtNombre = document.getElementById("nombre")
 const txtDomicilio = document.getElementById("domicilio")
 
-const BotonGuardar = document.getElementById("btnGuardarA")
-const BotonEditar = document.getElementById("btnEditarA")
-const BotonCancelar = document.getElementById("btnCancelarA")
+const botonGuardar = document.getElementById("btnGuardarA")
+const botonEditar = document.getElementById("btnEditarA")
+const botonCancelar = document.getElementById("btnCancelarA")
 
 const listaAlumnos = document.getElementById("listaAlumnos")
 
