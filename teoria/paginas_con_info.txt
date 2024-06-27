@@ -1,0 +1,2 @@
+Htl, CSS y javascript: https://lenguajejs.com/
+ASINCRONIA, PROMESAS: https://lenguajejs.com/javascript/asincronia/que-es/

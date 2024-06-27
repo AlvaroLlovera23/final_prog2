@@ -7,19 +7,19 @@ const botonEditar = document.getElementById("btnEditarA")
 const botonCancelar = document.getElementById("btnCancelarA")
 
 const listaAlumnos = document.getElementById("listaAlumnos")
+//Para todos los casos anteriores lo que estamos haciendo es asignar los elementos html, como los inputs, botones y el div donde se renderiza la lista de los alumnos registrados. Esto para más tarde poder manipularlos. Por ejemplo de los inputs podemos obtener el valor ingresado o asignarles un valor como en el caso de que seleccionamos un alumno para editar. Con los botones podemos habilitarlos o deshabilitarlos segun nos convenga.
 
-const url= "http://localhost:3000/alumno"
+const url= "http://localhost:3000/alumno" //Aqui asignamos la url que utilizamos para hacer las peticiones al servidor.
 
-var idAuxuliar
+var idAuxuliar //Esta variable auxiliar nos sirve para guardar el id del alumno que seleccionamos para editar. Para luego agregarla a la url de la peticion y asi editar el alumno que se selecciono previamente.
 
 function crearAlumno() {
-    axios.post(url, {
+    axios.post(url, { 
         dni: txtDNI.value,
         nombre: txtNombre.value,
         domicilio: txtDomicilio.value
     }).then(() => {
         listarAlumnos()
-        //AQUI VA A IR LA FUNCIÓN PARA LISTAR LOS ALUMNOS
     }).catch(()=>{
         alert("ocurrió un error")
     })

@@ -1,0 +1,38 @@
+Metáfora del Restaurante
+Restaurante:
+Piensa en Internet como un gran restaurante con muchas mesas (sitios web) y camareros (servidores web).
+
+Cliente (tú):
+Tú eres el cliente que llega al restaurante con hambre de información.
+
+Menú (URL):
+El menú del restaurante es como la URL (dirección web) que le dices al camarero. Contiene una lista de todas las páginas (platos) que puedes pedir.
+
+Camarero (HTTP):
+El camarero es el protocolo HTTP. Es el que toma tu pedido y se encarga de traerte la comida desde la cocina (servidor).
+
+Pedido (Solicitud HTTP):
+Cuando quieres algo, le dices al camarero tu pedido. Esto es como enviar una solicitud HTTP a un servidor web. Por ejemplo, pides una hamburguesa (solicitas una página web).
+
+Cocina (Servidor):
+La cocina es donde se prepara tu pedido. En términos de la web, el servidor procesa tu solicitud y busca la información que has pedido.
+
+Plato servido (Respuesta HTTP):
+Una vez que la cocina ha preparado tu comida, el camarero te la trae de vuelta. Esta es la respuesta HTTP que contiene la página web o el recurso que solicitaste.
+
+Ejemplo paso a paso:
+
+1.Cliente hace el pedido: Tú llegas al restaurante y decides que quieres una hamburguesa (quieres visitar una página web).
+
+2.Camarero toma el pedido: Le dices al camarero que quieres una hamburguesa (tu navegador envía una solicitud HTTP al servidor).
+
+3.Cocina prepara el pedido: La cocina recibe la orden y prepara la hamburguesa (el servidor web procesa la solicitud y prepara la página web).
+
+4.Camarero trae el pedido: El camarero te trae la hamburguesa a tu mesa (el servidor envía la respuesta HTTP con la página web de vuelta a tu navegador).
+
+5.Cliente recibe el pedido: Tú recibes la hamburguesa y la disfrutas (tu navegador muestra la página web en tu pantalla).
+Detalles adicionales:
+Menú (URL): Cada plato en el menú tiene un nombre y una descripción. Similarmente, cada página web tiene una dirección URL única.
+Camarero (HTTP): El camarero puede traer diferentes tipos de comida (recursos web como imágenes, texto, videos, etc.) dependiendo de lo que pidas.
+Pedido especial (Métodos HTTP): Puedes pedir tu hamburguesa con queso (GET solicitud para obtener datos) o pedir cambiar algo en tu pedido (POST solicitud para enviar datos).
+Esta metáfora ayuda a ilustrar cómo funciona HTTP de una manera accesible y fácil de entender, mostrando el proceso de solicitud y respuesta que ocurre cada vez que visitas una página web.
