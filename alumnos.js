@@ -31,9 +31,9 @@ function listarAlumnos() {
       listaAlumnos.innerHTML= ""
       resp.data.forEach(elemento => {
         listaAlumnos.innerHTML += 
-            `<button onclick = borrarAlumno(${elemento.id})>x</button> 
+            `<div><button onclick = borrarAlumno(${elemento.id})>x</button> 
             <button onclick = seleccionarAlumno(${elemento.id})>Editar</button>
-            - ${elemento.dni} - ${elemento.nombre} - ${elemento.domicilio}`});
+            - ${elemento.dni} - ${elemento.nombre} - ${elemento.domicilio}</div>`});
     }) //si la promesa se cumple, con then realizamos una acción
     .catch(() => {
 

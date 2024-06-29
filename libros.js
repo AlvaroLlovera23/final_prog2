@@ -28,10 +28,13 @@ function listarLibros() {
     .then((resp) => {
       listaLibros.innerHTML= ""
       resp.data.forEach(elemento => {
-        listaLibros.innerHTML += '<button onclick="borrarLibro(' + elemento.id + ')">X</button>' + '<button onclick="seleccionarLibro(' + elemento.id + ')">Editar</button>' + " - " + elemento.titulo + " - " + elemento.autor + "<br>"});
+        listaLibros.innerHTML += 
+        `<div><button onclick = borrarLibro(${elemento.id})>x</button> 
+            <button onclick = seleccionarLibro(${elemento.id})>Editar</button>
+            - ${elemento.titulo} - ${elemento.autor}</div>`})
     }) //si la promesa se cumple, con then realizamos una acción
     .catch(() => {
-
+        alert("no se pudo obtener los libros")
     })//capturamos el error si la promesa no se resuelve
 }
 listarLibros()

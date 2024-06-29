@@ -29,6 +29,11 @@
       "titulo": "ALIADOS",
       "autor": "Leandro Calderone",
       "id": 7
+    },
+    {
+      "titulo": "Hijitus",
+      "autor": "Garcia Ferré",
+      "id": 8
     }
   ],
   "alumno": [
@@ -49,36 +54,22 @@
       "nombre": "Llovera Olmedo Alvaro",
       "domicilio": "S. M. de Tucumán",
       "id": 4
+    },
+    {
+      "dni": "38249286",
+      "nombre": "Llovera Facundo",
+      "domicilio": "S. M. de Tucumán",
+      "id": 5
     }
   ],
   "prestamo": [
     {
-      "fechaEntrega": "2024-05-22",
-      "fechaDevolucion": "2024-06-05",
-      "libroId": "2",
-      "alumnoId": "1",
-      "id": 1
-    },
-    {
-      "fechaEntrega": "2024-06-05",
-      "fechaDevolucion": "2024-06-05",
-      "libroId": "3",
-      "alumnoId": "2",
-      "id": 2
-    },
-    {
-      "fechaEntrega": "2024-05-22",
-      "fechaDevolucion": "2024-06-05",
-      "libroId": "4",
-      "alumnoId": "3",
-      "id": 3
-    },
-    {
-      "fechaEntrega": "2024-05-30",
-      "fechaDevolucion": "2024-05-28",
+      "fechaEntrega": "2024-06-04",
+      "fechaDevolucion": "2024-06-12",
       "libroId": "5",
-      "alumnoId": "1",
-      "id": 4
+      "alumnoId": "4",
+      "id": 1
     }
-  ]
+  ],
+  "devoluciones": []
 }
