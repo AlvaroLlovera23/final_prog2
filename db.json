@@ -64,12 +64,36 @@
   ],
   "prestamo": [
     {
-      "fechaEntrega": "2024-06-04",
-      "fechaDevolucion": "2024-06-12",
+      "devolucion": true,
+      "fechaEntrega": "2024-07-04",
+      "fechaDevolucion": "2024-07-05",
       "libroId": "5",
       "alumnoId": "4",
       "id": 1
+    },
+    {
+      "devolucion": true,
+      "fechaEntrega": "2024-07-01",
+      "fechaDevolucion": "2024-07-11",
+      "libroId": "4",
+      "alumnoId": "1",
+      "id": 2
+    },
+    {
+      "devolucion": true,
+      "fechaEntrega": "2024-07-03",
+      "fechaDevolucion": "2024-07-11",
+      "libroId": "2",
+      "alumnoId": "2",
+      "id": 3
+    },
+    {
+      "devolucion": true,
+      "fechaEntrega": "2024-07-01",
+      "fechaDevolucion": "2024-07-05",
+      "libroId": "1",
+      "alumnoId": "4",
+      "id": 4
     }
-  ],
-  "devoluciones": []
+  ]
 }

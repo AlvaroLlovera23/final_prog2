@@ -36,7 +36,7 @@ cargarSelectAlumno()
 
  function guardarPrestamo() {
             // validarPrestamoPorCrear(libroId.value)
-        axios.post("http://localhost:3000/prestamo", {fechaEntrega: fechaEntrega.value, fechaDevolucion: fechaDevolucion.value, libroId: libroId.value, alumnoId: alumnoId.value})
+        axios.post("http://localhost:3000/prestamo", {fechaEntrega: fechaEntrega.value, fechaDevolucion: fechaDevolucion.value, libroId: libroId.value, alumnoId: alumnoId.value, devolucion: false})
         .then(()=> {
             listarPrestamos()
         })
@@ -52,9 +52,21 @@ cargarSelectAlumno()
             resp.data.forEach(async element => {
                 const resAlumnos = await axios.get("http://localhost:3000/alumno/" + element.alumnoId)
                 const resLibros = await axios.get("http://localhost:3000/libro/" + element.libroId)
-
-
-                listaPrestamos.innerHTML += `
+                const devolucion= element.devolucion
+                if (devolucion == true){
+                    listaPrestamos.innerHTML += `
+                    <tr class="devuelto">
+                        <td>${resLibros.data.titulo}</td>
+                        <td>${resAlumnos.data.nombre}</td>
+                        <td>${element.fechaEntrega}</td>
+                        <td>${element.fechaDevolucion}</td>
+                        <td>
+                            Devuelto <button onclick= borrar(${element.id})>X</button>
+                        </td>
+                    </tr>`
+                }
+                else {
+                    listaPrestamos.innerHTML += `
                 <tr>
                     <td>${resLibros.data.titulo}</td>
                     <td>${resAlumnos.data.nombre}</td>
@@ -65,13 +77,42 @@ cargarSelectAlumno()
                         <button onclick="devolucion(${element.id})">Devolución</button>
                     </td>
                 </tr>`
+                }
             });
         })
         .catch(()=> {
             alert("No se pudo mostrar la lista")
         })
-        
     }
+
+async function devolucion(id){
+    try {
+        const prestamo = await getPrestamo(id)
+
+        await axios.put("http://localhost:3000/prestamo/" + id, {
+            devolucion: true,
+            fechaEntrega: prestamo.fechaEntrega, 
+            fechaDevolucion: prestamo.fechaDevolucion, 
+            libroId: prestamo.libroId, 
+            alumnoId: prestamo.alumnoId,
+        })
+        listarPrestamos()
+    }
+    catch(error){
+        alert("ocurrió un error")
+    }
+}
+    
+async function getPrestamo(id) {
+    try{ 
+        const res = await axios.get("http://localhost:3000/prestamo/" + id)
+        const prestamo = await res.data
+        return prestamo
+    }
+    catch(error){
+        alert("ocurrió un error")
+    }
+}
 
 function mostrarPrestamo(id) {
     
@@ -91,8 +132,6 @@ function mostrarPrestamo(id) {
             alert("ocurrió un error" )
         })
     }
-
-
 
 function modificarPrestamo() {
     
@@ -121,9 +160,13 @@ function cancelarEditarPrestamo() {
     btnCancelarP.disabled = true
 }
 
-//  function validarPrestamoPorCrear(libroId) {
-    
-//         axios.get("http://localhost:3000/prestamo")
-//         console.log(res.data)
-//         alert(error);
-//     }
+function borrar(id) {
+    axios.delete("http://localhost:3000/prestamo/" + id)
+    .then(()=> {
+        listarPrestamos()
+    })
+    .catch(()=> {
+        alert("ocurrió un error")
+    })
+}
+

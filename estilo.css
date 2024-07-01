@@ -159,6 +159,15 @@ input{
     color: white;
 }
 
+.tablaPrestamos tbody td{
+    padding: 20px 0;
+}
+
+.devuelto{
+    background-color:rgb(202, 202, 202);
+    color: rgb(83, 83, 83);
+}
+
 .acciones{
     display: flex;
 }
