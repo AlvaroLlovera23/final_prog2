@@ -39,61 +39,40 @@
   "alumno": [
     {
       "dni": "41059937",
-      "nombre": "Molinero Tobias",
+      "nombre": "Tobias Leandro Molinero",
       "domicilio": "Yerba Buena",
       "id": 1
     },
     {
-      "dni": "41276216",
-      "nombre": "Majolli Facundo",
-      "domicilio": "SMDT",
-      "id": 2
-    },
-    {
       "dni": "34286865",
-      "nombre": "Llovera Olmedo Alvaro",
+      "nombre": "Alvaro Gabriel Llovera Olmedo",
       "domicilio": "S. M. de Tucumán",
-      "id": 4
+      "id": 1
     },
     {
-      "dni": "38249286",
-      "nombre": "Llovera Facundo",
+      "dni": "41022559",
+      "nombre": "Facundo Majolli",
       "domicilio": "S. M. de Tucumán",
-      "id": 5
+      "id": 1
     }
+    
   ],
   "prestamo": [
     {
-      "devolucion": true,
-      "fechaEntrega": "2024-07-04",
-      "fechaDevolucion": "2024-07-05",
-      "libroId": "5",
-      "alumnoId": "4",
+      "fechaEntrega": "2024-07-05",
+      "fechaDevolucion": "2024-07-11",
+      "libroId": "2",
+      "alumnoId": "1",
+      "devolucion": false,
       "id": 1
     },
     {
       "devolucion": true,
-      "fechaEntrega": "2024-07-01",
-      "fechaDevolucion": "2024-07-11",
-      "libroId": "4",
-      "alumnoId": "1",
-      "id": 2
-    },
-    {
-      "devolucion": true,
-      "fechaEntrega": "2024-07-03",
-      "fechaDevolucion": "2024-07-11",
+      "fechaEntrega": "2024-07-02",
+      "fechaDevolucion": "2024-07-04",
       "libroId": "2",
       "alumnoId": "2",
-      "id": 3
-    },
-    {
-      "devolucion": true,
-      "fechaEntrega": "2024-07-01",
-      "fechaDevolucion": "2024-07-05",
-      "libroId": "1",
-      "alumnoId": "4",
-      "id": 4
+      "id": 2
     }
   ]
 }

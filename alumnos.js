@@ -76,15 +76,44 @@ function cancelarEditarAlumno(){
     txtDomicilio.value= ""
 }
 
-function borrarAlumno(id) {
-    let isConfirm = confirm("desea eliminar éste alumno")
-    if(isConfirm == true) {
-        axios.delete(url + "/" + id)
-        .then(() => {
-            listarAlumnos()
-        })
-        .catch(() => {
-            alert("ocurrió un error")
-        })
+async function borrarAlumno(id) {
+    try {
+        let isConfirm = confirm("desea eliminar éste alumno")
+        if(isConfirm == true) {
+            const alumnoConDeuda = await validarAlumno(id)    
+            console.log(alumnoConDeuda)
+            if(alumnoConDeuda) {
+                alert("El alumno no puede ser dado de baja, porque presenta deudas")
+            } else {
+                axios.delete(url + "/" + id)
+                .then(() => {
+                    listarAlumnos()
+                })
+                .catch(() => {
+                    alert("ocurrió un error")
+                })
+            }    
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function validarAlumno(id) {
+    try {
+        let prestamo = []
+        const resPrestamo= await axios.get("http://localhost:3000/prestamo")
+        const dataPrestamo= await resPrestamo.data
+        console.log(dataPrestamo)
+        prestamo= dataPrestamo
+        const alumnoConDeuda= await prestamo.find(element=> element.alumnoId == id)
+        if(alumnoConDeuda.devolucion === false){
+            return true
+        } else {
+            return false
+        }
+    } catch (error) {
+        console.log(error)
     }
 }
