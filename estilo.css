@@ -140,13 +140,37 @@ input{
 /* #prestamos{
     margin-top:40px;
 } */
-
-#listaP{
-    margin-top: 10px;
-    margin-bottom:20px;
-    text-align: left;
+.contenedorPrestamo{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    margin-bottom: 40px;
 }
 
+.tablaPrestamos{
+    background: whitesmoke;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tablaPrestamos thead{
+    background: #0D4C92;
+    color: white;
+}
+
+.tablaPrestamos tbody td{
+    padding: 20px 0;
+}
+
+.devuelto{
+    background-color:rgb(202, 202, 202);
+    color: rgb(83, 83, 83);
+}
+
+.acciones{
+    display: flex;
+}
 /* form alumnos */
 
 .dni{
@@ -170,6 +194,8 @@ input{
     margin-top: 10px;
     margin-bottom:20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 /* form libros */
@@ -189,4 +215,6 @@ input{
     margin-top: 10px;
     margin-bottom:20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }

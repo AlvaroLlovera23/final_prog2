@@ -44,14 +44,29 @@
                     <select id="alumnoId"></select>
                 </div>
                 <div class="botones">
-                    <button id="guardarP" onclick="guardarP()">Agregar</button>
-                    <button id="editarP" onclick="modificarP()" disabled>Actualizar</button>
-                    <button id="cancelarP" onclick="cancelarEditarP()" disabled hidden>Cancelar</button>
+                    <button id="guardarP" onclick="guardarPrestamo()">Agregar</button>
+                    <button id="editarP" onclick="modificarPrestamo()" disabled>Actualizar</button>
+                    <button id="cancelarP" onclick="cancelarEditarPrestamo()" disabled hidden>Cancelar</button>
                 </div>
                 <h3 id="prestamos">Lista de Prestamos</h3>
                 <div class="contenedorPrestamo">
-                    <div id="listaPrestamos"></div>
-                    <div id="listaDevoluciones"></div>
+                    <div class="listaPrestamos">
+                        <p>
+                            Prestamos
+                        </p>
+                        <table class="tablaPrestamos">
+                            <thead>
+                                <tr>
+                                    <th>Libro</th>
+                                    <th>Alumno</th>
+                                    <th>Fecha Entrega</th>
+                                    <th>Fecha Devolución</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listaPrestamos"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </main>
