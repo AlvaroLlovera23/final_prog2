@@ -15,6 +15,7 @@ function guardarLibro() {
     axios.post(url, {
         titulo: txtTitulo.value,
         autor: txtAutor.value,
+        prestado: false
     }).then(() => {
         listarLibros()
         //AQUI VA A IR LA FUNCIÓN PARA LISTAR LOS LIBROS
@@ -83,3 +84,10 @@ function borrarLibro(id) {
         })
     }
 }
+
+// async function validarLibro(id) {
+//     try{
+//         let prestamo[]
+//         const 
+//     }
+// }

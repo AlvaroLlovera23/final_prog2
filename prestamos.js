@@ -38,12 +38,36 @@ cargarSelectAlumno()
             // validarPrestamoPorCrear(libroId.value)
         axios.post("http://localhost:3000/prestamo", {fechaEntrega: fechaEntrega.value, fechaDevolucion: fechaDevolucion.value, libroId: libroId.value, alumnoId: alumnoId.value, devolucion: false})
         .then(()=> {
+            let id_libro= alumnoId.value
+            actualizarEstadoLibro(id_libro)
             listarPrestamos()
         })
         .catch(()=> {
             alert(" no se pudo agregar")
         })
+        // let id_libro= libroId.value
+        //     axios.put("http://localhost:3000/libro/" + id_libro)
+        //     .then(()=> {
+                
+        //     })
     }
+
+async function actualizarEstadoLibro(id) {
+         try {
+            const resp= await axios.get("http://localhost:3000/libro/" + id)
+            const data= await resp.data
+            console.log(data)
+            const resLibro= await axios.put("http://localhost:3000/libro/" + id, {
+                titulo: data[0].titulo,
+                autor: data[0].autor,
+                prestado: true
+            })
+         }
+         catch (error) {
+            alert("ocurrió un error")
+         } 
+}
+
  function listarPrestamos() {
     
         axios.get("http://localhost:3000/prestamo")

@@ -64,7 +64,7 @@ function editarAlumno() {
         listarAlumnos()
     }).catch(() => {
         alert("ocurrió un error")
-    })
+    }) 
 }
 
 function cancelarEditarAlumno(){
@@ -100,7 +100,7 @@ async function borrarAlumno(id) {
     }
 }
 
-async function validarAlumno(id) {
+async function validarAlumno(id) { 
     try {
         let prestamo = []
         const resPrestamo= await axios.get("http://localhost:3000/prestamo")
