@@ -35,21 +35,15 @@ cargarSelectAlumno()
  }
 
  function guardarPrestamo() {
-            // validarPrestamoPorCrear(libroId.value)
+        let id_libro= libroId.value
         axios.post("http://localhost:3000/prestamo", {fechaEntrega: fechaEntrega.value, fechaDevolucion: fechaDevolucion.value, libroId: libroId.value, alumnoId: alumnoId.value, devolucion: false})
         .then(()=> {
-            let id_libro= alumnoId.value
             actualizarEstadoLibro(id_libro)
             listarPrestamos()
         })
         .catch(()=> {
             alert(" no se pudo agregar")
         })
-        // let id_libro= libroId.value
-        //     axios.put("http://localhost:3000/libro/" + id_libro)
-        //     .then(()=> {
-                
-        //     })
     }
 
 async function actualizarEstadoLibro(id) {
