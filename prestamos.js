@@ -51,9 +51,9 @@ async function actualizarEstadoLibro(id) {
             const resp= await axios.get("http://localhost:3000/libro/" + id)
             const data= await resp.data
             console.log(data)
-            const resLibro= await axios.put("http://localhost:3000/libro/" + id, {
-                titulo: data[0].titulo,
-                autor: data[0].autor,
+            await axios.put("http://localhost:3000/libro/" + id, {
+                titulo: data.titulo,
+                autor: data.autor,
                 prestado: true
             })
          }

@@ -29,10 +29,11 @@ function listarLibros() {
     .then((resp) => {
       listaLibros.innerHTML= ""
       resp.data.forEach(elemento => {
+        let prestado= elemento.prestado
         listaLibros.innerHTML += 
         `<div><button onclick = borrarLibro(${elemento.id})>x</button> 
             <button onclick = seleccionarLibro(${elemento.id})>Editar</button>
-            - ${elemento.titulo} - ${elemento.autor}</div>`})
+            - ${elemento.titulo} - ${elemento.autor} <span class=${elemento.prestado == true ? "visible" : "hidden"}> PRESTADO </span> </div>`})
     }) //si la promesa se cumple, con then realizamos una acción
     .catch(() => {
         alert("no se pudo obtener los libros")
@@ -50,7 +51,9 @@ function seleccionarLibro(id) {
        botonCancelar.hidden = false
        botonGuardar.disabled = true
     })
-    .catch(() => {})
+    .catch((error) => {
+        alert("ocurrió un error")
+    })
 }
 
 function editarLibro() {
@@ -72,22 +75,31 @@ function cancelarEditarLibro() {
     txtAutor.value = ""
 }
 
-function borrarLibro(id) {
-    let isConfirm = confirm("desea eliminar éste libro")
-    if(isConfirm == true) {
-        axios.delete(url + "/" + id)
-        .then(() => {
-            listarLibros()
-        })
-        .catch(() => {
-            alert("ocurrió un error")
-        })
+
+async function borrarLibro(id) {
+    try {    
+        let isConfirm = confirm("desea eliminar éste libro")
+        if(isConfirm == true) {
+            const libroPrestado = await validarLibro(id)
+            if(libroPrestado == true){
+                alert("El libro fue prestado, por lo tanto no puede ser eliminado.")
+            } else {
+                await axios.delete(url + "/" + id)
+            }
+        }
+    } catch (error) {
+        alert("ocurrio un error")
     }
 }
 
-// async function validarLibro(id) {
-//     try{
-//         let prestamo[]
-//         const 
-//     }
-// }
+async function validarLibro(id) {
+    try{
+        const resp= await axios.get(url + "/" + id)
+        const data= await resp.data
+        return data.prestado
+    }
+    catch(error) {
+        alert("ocurrió un error en validar libro")
+    }
+}
+

@@ -1,39 +1,22 @@
 {
   "libro": [
     {
-      "titulo": "Algebra I",
-      "autor": "bhglkjh",
+      "titulo": "gfjhfhf",
+      "autor": "2222",
+      "prestado": true,
       "id": 1
     },
     {
-      "titulo": "Biologia",
-      "autor": "Editorial Kapelusz",
+      "titulo": "HRUYRIUTU",
+      "autor": "123456",
+      "prestado": true,
       "id": 2
     },
     {
-      "titulo": "Fisica y Quimica",
-      "autor": "Editorial Medicina P",
-      "id": 4
-    },
-    {
-      "titulo": "Narnia",
-      "autor": "C S Lewis",
-      "id": 5
-    },
-    {
-      "titulo": "Matematica",
-      "autor": "Editorial Kapelusz",
-      "id": 6
-    },
-    {
-      "titulo": "ALIADOS",
-      "autor": "Leandro Calderone",
-      "id": 7
-    },
-    {
-      "titulo": "Hijitus",
-      "autor": "Garcia Ferré",
-      "id": 8
+      "titulo": "fkfkghj",
+      "autor": "yryuru",
+      "prestado": false,
+      "id": 3
     }
   ],
   "alumno": [
@@ -47,31 +30,30 @@
       "dni": "34286865",
       "nombre": "Alvaro Gabriel Llovera Olmedo",
       "domicilio": "S. M. de Tucumán",
-      "id": 1
+      "id": 2
     },
     {
       "dni": "41022559",
       "nombre": "Facundo Majolli",
       "domicilio": "S. M. de Tucumán",
-      "id": 1
+      "id": 3
     }
-    
   ],
   "prestamo": [
     {
-      "fechaEntrega": "2024-07-05",
-      "fechaDevolucion": "2024-07-11",
-      "libroId": "2",
-      "alumnoId": "1",
+      "fechaEntrega": "2024-07-09",
+      "fechaDevolucion": "2024-07-17",
+      "libroId": "1",
+      "alumnoId": "2",
       "devolucion": false,
       "id": 1
     },
     {
-      "devolucion": true,
       "fechaEntrega": "2024-07-02",
-      "fechaDevolucion": "2024-07-04",
+      "fechaDevolucion": "2024-07-09",
       "libroId": "2",
-      "alumnoId": "2",
+      "alumnoId": "3",
+      "devolucion": false,
       "id": 2
     }
   ]
