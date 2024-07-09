@@ -1,22 +1,28 @@
 {
   "libro": [
     {
-      "titulo": "gfjhfhf",
-      "autor": "2222",
+      "titulo": "Matemática Discreta",
+      "autor": "Teseira",
       "prestado": true,
       "id": 1
     },
     {
-      "titulo": "HRUYRIUTU",
-      "autor": "123456",
+      "titulo": "Biología",
+      "autor": "Santillana",
       "prestado": true,
       "id": 2
     },
     {
-      "titulo": "fkfkghj",
-      "autor": "yryuru",
-      "prestado": false,
+      "titulo": "Organización Contable",
+      "autor": "Sanchez",
+      "prestado": true,
       "id": 3
+    },
+    {
+      "titulo": "Programación III",
+      "autor": "Politi",
+      "prestado": false,
+      "id": 4
     }
   ],
   "alumno": [
@@ -42,19 +48,26 @@
   "prestamo": [
     {
       "fechaEntrega": "2024-07-09",
-      "fechaDevolucion": "2024-07-17",
+      "fechaDevolucion": "2024-07-12",
       "libroId": "1",
       "alumnoId": "2",
       "devolucion": false,
       "id": 1
     },
     {
-      "fechaEntrega": "2024-07-02",
-      "fechaDevolucion": "2024-07-09",
+      "fechaEntrega": "2024-07-09",
+      "fechaDevolucion": "2024-07-14",
+      "libroId": "3",
+      "alumnoId": "1",
+      "id": 2
+    },
+    {
+      "devolucion": true,
+      "fechaEntrega": "2024-07-09",
+      "fechaDevolucion": "2024-07-16",
       "libroId": "2",
       "alumnoId": "3",
-      "devolucion": false,
-      "id": 2
+      "id": 3
     }
   ]
 }

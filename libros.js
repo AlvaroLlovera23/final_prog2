@@ -6,10 +6,12 @@ const botonEditar = document.getElementById("btnEditarL")
 const botonCancelar = document.getElementById("btnCancelarL")
 
 const listaLibros = document.getElementById("listaLibros")
-
+const listaLibrosPrestados = document.getElementById("listaLibrosPrestados")
 const url= "http://localhost:3000/libro"
 
 var idAuxuliar
+
+let libros= []
 
 function guardarLibro() {
     axios.post(url, {
@@ -27,6 +29,8 @@ function guardarLibro() {
 function listarLibros() {
     axios.get(url)
     .then((resp) => {
+      libros= resp.data
+      console.log(libros)
       listaLibros.innerHTML= ""
       resp.data.forEach(elemento => {
         let prestado= elemento.prestado
@@ -103,3 +107,31 @@ async function validarLibro(id) {
     }
 }
 
+async function getLibrosEnPrestamos(){
+    try {
+        let librosEnPrestamos= []
+        const resp= await axios.get("http://localhost:3000/prestamo")
+        const prestamos= await resp.data
+        prestamos.forEach(prestamo => {
+        librosEnPrestamos.push(prestamo.libroId)
+        })
+        listarLibrosNoDevueltos(librosEnPrestamos)
+    } catch (error) {
+        alert("ocurrió un error")
+    }
+}
+getLibrosEnPrestamos()
+
+function listarLibrosNoDevueltos(array){
+    let librosNoDevueltos= []
+    array.forEach(element => {
+      let libro= libros.find(libro => libro.id == element)
+      if(libro != undefined){
+        librosNoDevueltos.push(libro)
+    }
+    }) 
+    listaLibrosPrestados.innerHTML= ""
+    librosNoDevueltos.forEach(libro => {
+    listaLibrosPrestados.innerHTML += `<li>${libro.titulo}</li>`
+    })
+}

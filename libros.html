@@ -37,7 +37,13 @@
                     <button onclick="cancelarEditarLibro()" id="btnCancelarL" hidden="true">Cancelar</button>
                 </div>           
                 <h3>Lista de Libros</h3>
-                <div id="listaLibros"></div>
+                <div class="contenedorLibros">
+                    <div id="listaLibros"></div>
+                    <div class="listaLibrosPrestados">
+                        <h4>Libros no devueltos</h4>
+                        <ul id="listaLibrosPrestados"></ul>
+                    </div>
+                </div>
             </div>
         </main>
         <footer>
