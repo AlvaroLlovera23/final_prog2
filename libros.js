@@ -113,7 +113,9 @@ async function getLibrosEnPrestamos(){
         const resp= await axios.get("http://localhost:3000/prestamo")
         const prestamos= await resp.data
         prestamos.forEach(prestamo => {
-        librosEnPrestamos.push(prestamo.libroId)
+            if(prestamo.devolucion == false){
+            librosEnPrestamos.push(prestamo.libroId)
+            }
         })
         listarLibrosNoDevueltos(librosEnPrestamos)
     } catch (error) {
@@ -135,3 +137,4 @@ function listarLibrosNoDevueltos(array){
     listaLibrosPrestados.innerHTML += `<li>${libro.titulo}</li>`
     })
 }
+

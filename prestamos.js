@@ -51,12 +51,20 @@ async function actualizarEstadoLibro(id) {
             const resp= await axios.get("http://localhost:3000/libro/" + id)
             const data= await resp.data
             console.log(data)
-            await axios.put("http://localhost:3000/libro/" + id, {
-                titulo: data.titulo,
-                autor: data.autor,
-                prestado: true
-            })
-         }
+            if(data.prestado == false){
+                await axios.put("http://localhost:3000/libro/" + id, {
+                    titulo: data.titulo,
+                    autor: data.autor,
+                    prestado: true
+                })
+            } else{
+                await axios.put("http://localhost:3000/libro/" + id, {
+                    titulo: data.titulo,
+                    autor: data.autor,
+                    prestado: false
+                })
+            }
+        }
          catch (error) {
             alert("ocurrió un error")
          } 
